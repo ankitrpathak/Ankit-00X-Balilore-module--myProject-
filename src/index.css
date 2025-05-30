@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #E91E63;
+  --accent-color: #424242;
+  --neutral-light: #F5F5F5;
+  --neutral-ivory: #FFFFF0;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --transition-standard: 0.3s ease;
+}
+
+@layer base {
+  html {
+    font-family: 'Lora', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--primary-color)] text-white px-6 py-2 rounded-md shadow-md transition-all duration-300 hover:opacity-90;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-[var(--accent-color)] border border-[var(--accent-color)] px-6 py-2 rounded-md transition-all duration-300 hover:bg-[var(--accent-color)] hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent;
+  }
+  
+  .textarea-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent;
+  }
+  
+  .error-message {
+    @apply text-red-500 text-sm mt-1;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+body {
+  background-color: var(--neutral-ivory);
+  color: var(--accent-color);
+  line-height: 1.5;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
